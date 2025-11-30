@@ -1,0 +1,58 @@
+---
+const { active = 'home' } = Astro.props;
+---
+
+<header class="bg-white border-b border-black/5">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <div class="flex flex-col leading-tight">
+      <span class="text-sm font-semibold tracking-wide text-teal-600 uppercase">
+        ANDRES MEJÍA
+      </span>
+      <span class="text-xs text-neutral-600">
+        data · ai · infra
+      </span>
+    </div>
+    <nav class="flex gap-6 text-sm font-medium">
+      <a
+        href="/"
+        class={`pb-1 border-b-2 ${
+          active === 'home'
+            ? 'text-teal-700 border-teal-500'
+            : 'text-neutral-800 border-transparent hover:text-teal-700 hover:border-teal-400 transition'
+        }`}
+      >
+        Home
+      </a>
+      <a
+        href="/work"
+        class={`pb-1 border-b-2 ${
+          active === 'work'
+            ? 'text-teal-700 border-teal-500'
+            : 'text-neutral-800 border-transparent hover:text-teal-700 hover:border-teal-400 transition'
+        }`}
+      >
+        Work
+      </a>
+      <a
+        href="/about"
+        class={`pb-1 border-b-2 ${
+          active === 'about'
+            ? 'text-teal-700 border-teal-500'
+            : 'text-neutral-800 border-transparent hover:text-teal-700 hover:border-teal-400 transition'
+        }`}
+      >
+        About
+      </a>
+      <a
+        href="/contact"
+        class={`pb-1 border-b-2 ${
+          active === 'contact'
+            ? 'text-teal-700 border-teal-500'
+            : 'text-neutral-800 border-transparent hover:text-teal-700 hover:border-teal-400 transition'
+        }`}
+      >
+        Contact
+      </a>
+    </nav>
+  </div>
+</header>

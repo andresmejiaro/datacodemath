@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const pageTitle = 'datacodemath.com · Andrés Mejía';
+const pageDescription =
+  'Personal site of Andrés Mejía — data, code, math, and systems documented like a notebook.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <Header active="home" />
+
+  {/* Hero white island */}
+  <section class="rounded-2xl bg-white text-black shadow-xl shadow-black/40 border border-black/5 p-6 sm:p-8 space-y-6">
+    <div class="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 text-teal-700 px-3 py-1 text-xs font-medium">
+      <span class="w-1.5 h-1.5 rounded-full bg-teal-400 mr-2"></span>
+      dark canvas · white notebooks
+    </div>
+
+    <div class="space-y-3">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">
+        Systems, data, and learning—documented like a notebook, not a pitch deck.
+      </h1>
+      <p class="text-base sm:text-lg leading-relaxed text-neutral-800">
+        I build experiments in reinforcement learning, distributed systems, and security, then turn them
+        into clear stories for people who need to decide what to ship next.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-3 text-sm">
+      <div class="inline-flex items-center rounded-full border border-teal-400 text-teal-700 bg-teal-50 px-3 py-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-teal-400 mr-2"></span>
+        Reinforcement Learning
+      </div>
+      <div class="inline-flex items-center rounded-full border border-cyan-400 text-cyan-700 bg-cyan-50 px-3 py-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-2"></span>
+        Systems &amp; Security
+      </div>
+      <div class="inline-flex items-center rounded-full border border-neutral-400 text-neutral-800 bg-neutral-50 px-3 py-1">
+        <span class="w-1.5 h-1.5 rounded-full bg-neutral-500 mr-2"></span>
+        Teaching &amp; Storytelling
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 pt-2 text-sm">
+      <button class="inline-flex items-center rounded-md bg-teal-500 px-4 py-2 font-medium text-black hover:bg-teal-400 transition-colors">
+        View selected work
+      </button>
+      <button class="inline-flex items-center rounded-md px-4 py-2 font-medium text-teal-600 border border-teal-400 bg-white hover:bg-teal-50 transition-colors">
+        Download CV
+      </button>
+    </div>
+  </section>
+
+  {/* Selected work header */}
+  <section class="space-y-4">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl sm:text-2xl font-semibold text-white">
+        Selected work
+      </h2>
+      <span class="text-xs text-white/60 uppercase tracking-wide">
+        black canvas · white islands
+      </span>
+    </div>
+
+    {/* Project white island */}
+    <article class="rounded-2xl bg-white text-black shadow-xl shadow-black/40 border border-black/5 p-5 sm:p-6 flex flex-col gap-4">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h3 class="text-lg font-semibold">
+            Learn2Slither · Reinforcement Learning Snake
+          </h3>
+          <p class="text-xs text-neutral-700">
+            2025 · Python · RL · Experiment
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="inline-flex items-center rounded-full bg-teal-50 px-3 py-1 font-medium text-teal-700 border border-teal-200">
+            RL / Q-Learning
+          </span>
+          <span class="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 font-medium text-cyan-700 border border-cyan-200">
+            Pygame
+          </span>
+          <span class="inline-flex items-center rounded-full bg-neutral-100 px-3 py-1 font-medium text-neutral-800 border border-neutral-300">
+            Case Study
+          </span>
+        </div>
+      </div>
+
+      <p class="text-sm text-neutral-800 leading-relaxed">
+        A reinforcement learning agent learns to play Snake from a narrow field of view. The interesting
+        part lives in the tooling: logs, visualizations, and experiments designed to understand why the value
+        function behaves the way it does, instead of just hoping for a good score.
+      </p>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="rounded-2xl border border-black/5 bg-white p-4">
+          <p class="mb-3 text-xs font-semibold uppercase text-neutral-600 tracking-wide">
+            Training snapshot
+          </p>
+          <div class="h-32 rounded-xl bg-gradient-to-br from-teal-50 via-cyan-50 to-white border border-dashed border-neutral-300 flex items-center justify-center">
+            <span class="text-xs text-neutral-500">
+              imagine a reward vs. episodes chart drawn in teal and cyan
+            </span>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-black/80 bg-black p-4">
+          <p class="mb-3 text-xs font-semibold uppercase text-white/60 tracking-wide">
+            Bellman update (sketch)
+          </p>
+          <pre class="text-xs text-teal-100 font-mono leading-relaxed overflow-x-auto">
+Q[s, a] ← Q[s, a] +
+          α · ( r + γ · max(Q[s', ·]) − Q[s, a] )
+          </pre>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm pt-1">
+        <a href="#" class="inline-flex items-center text-teal-700 hover:text-teal-600 underline underline-offset-2">
+          View project notes
+        </a>
+        <a href="#" class="inline-flex items-center text-cyan-700 hover:text-cyan-600 underline underline-offset-2">
+          Watch demo video
+        </a>
+        <a href="#" class="inline-flex items-center text-neutral-800 hover:text-black underline underline-offset-2">
+          GitHub repo
+        </a>
+      </div>
+    </article>
+  </section>
+
+  {/* Bottom "now" white strip */}
+  <section class="rounded-2xl bg-white text-black border border-black/5 p-5 space-y-3 text-sm">
+    <p class="text-xs font-semibold tracking-wide text-neutral-600 uppercase">
+      now
+    </p>
+    <p class="text-neutral-800 leading-relaxed">
+      Experimenting with multi-agent behavior trees in a distributed game environment, logging every
+      decision, and turning the mess into explanations that other humans can actually follow.
+    </p>
+    <div class="flex flex-wrap gap-4 text-xs text-neutral-700">
+      <span>Madrid · UTC+1</span>
+      <span>Open to data / AI / infra roles</span>
+      <span>Available for workshops / talks</span>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer class="border-t border-white/10 pt-4 text-xs text-white/60 flex items-center justify-between">
+    <span>© 2025 datacodemath.com</span>
+    <div class="flex gap-3">
+      <a href="#" class="hover:text-teal-300">LinkedIn</a>
+      <a href="#" class="hover:text-teal-300">GitHub</a>
+      <a href="#" class="hover:text-teal-300">Email</a>
+    </div>
+  </footer>
+</BaseLayout>
